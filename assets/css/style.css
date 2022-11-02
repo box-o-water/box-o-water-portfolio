@@ -1,0 +1,255 @@
+/* Variables */
+:root {
+  --darkslategray: #2f4f4f;
+  --lightslategray: #9ac1c1;
+  --gridbackground: rgba(242, 248, 248, 0.5);
+  --cardbackground: rgba(99, 100, 168, 0.5);
+}
+
+body {
+  font-family: "Chalkduster", fantasy;
+  background-image: url("../images/box-o-water_square.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+/* Header and Subheader */
+header{
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--darkslategray);
+  margin: 10px 5px;
+}
+
+h1 {
+  color: var(--darkslategray);
+  background-color: var(--lightslategray);
+  padding: 3px 1px 3px 30px;
+}
+
+h1:hover {
+  color: var(--lightslategray);
+  background-color: var(--darkslategray);
+}
+
+nav {
+  align-items: right;
+}
+
+nav li {
+  display: inline;
+  padding: 0px 20px;
+  justify-content: right;
+}
+
+a {
+  color: var(--lightslategray);
+}
+
+.subheader-content {
+  background-color: var(--lightslategray);
+  color: var(--darkslategray);
+  text-align: right;
+  margin: 5px;
+}
+
+.subheader-content:hover {
+  color: var(--lightslategray);
+  background-color: var(--darkslategray);
+}
+
+/* Main content with Grid layout */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'aboutmetitle aboutme'
+    'worktitle work'
+    'contactmetitle contactme';
+  gap: 1px;
+  background-color: transparent;
+  padding: 1px;
+}
+
+.grid-container > section {
+  background-color: var(--gridbackground);
+  margin: 5px;
+}
+
+/* About Me */
+.aboutmetitle { 
+  grid-area: about me;
+  text-align: right;
+}
+
+.aboutme {
+  grid-area: aboutme; 
+  padding-left: 10px;
+}
+
+/* Work and Work Cards */
+.worktitle {
+  grid-area: worktitle;
+  text-align: right;
+}
+
+.work {
+  grid-area: work;
+}
+
+h3 {
+  padding: 20px 40px;
+  margin: 0px;
+  width: fit-content;
+  background-color: var(--darkslategray);
+  color: var(--lightslategray);
+}
+
+.card-info {
+  margin: 0px;
+  background-color: var(--lightslategray);
+  color: var(--darkslategray);
+  width: fit-content;
+  padding: 0px 5px;
+}
+
+.card-big {
+    border-style: solid;
+    border-width: 1px;
+    padding: 10px;
+    margin: 0px 0px 10px 0px;
+    float: left;
+    width: 97%;
+    align-items: left;
+    text-align: left;
+    flex-grow: 1;
+    background-color: var(--cardbackground);
+}
+
+/* .card-big img {
+  position: relative;
+  top: 0px;
+  right: 0px;
+} */
+
+/* .prework {
+  position: relative;
+  top: 0px;
+  right: 0px;
+} */
+
+.card-small {
+  border-style:solid;
+  border-width: 1px;
+  padding: 10px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+  width: 45%;
+  align-items: left;
+  text-align: left;
+  flex-grow: 1;
+  background-color: rgba(99, 100, 168, 0.5);
+}
+
+.row2 {
+  margin: 0px 10px 0px 0px;
+}
+
+/* Contact Me */
+.contactmetitle {
+  grid-area: contactmetitle;
+  text-align: right;
+}
+
+.contactme {
+  grid-area: contactme;
+  align-items: right;
+}
+
+.links li{
+  display: inline;
+  padding: 0px 20px;
+}
+
+.links li a{
+  color: unset;
+}
+
+.contactme ul {
+  margin: 0px;
+}
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+
+  nav li {
+    padding: 0px 10px;
+  }
+
+  .card-small {
+    width: 46%;
+  }
+  
+}
+
+/* Large smartphones */
+@media screen and (max-width: 768px) {
+
+  h1 {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    padding: none;
+  }
+
+  nav li {
+    display: flex;
+    justify-content: right;
+  }
+  
+  .card-small {
+    width: 98%;
+  }
+
+  .row4 {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .links li{
+    display: inline;
+    padding: 0px 8px;
+  }
+
+}
+
+/* Small smartphones */
+@media screen and (max-width: 576px) {
+  header {
+    display:block;
+  }
+
+  h1 {
+    padding: none;
+  }
+
+  nav li {
+    display: block;
+    justify-content: left;
+  }
+  
+  .card-small {
+    width: 98%;
+  }
+
+  .row4 {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .contactme ul {
+    padding: 0px;
+  }
+
+  .links li {
+    display: flex;
+    justify-content: left;
+  }
+}
