@@ -2,8 +2,8 @@
 :root {
   --darkslategray: #2f4f4f;
   --lightslategray: #9ac1c1;
-  --gridbackground: rgba(242, 248, 248, 0.5);
-  --cardbackground: rgba(99, 100, 168, 0.5);
+  --gridbackground: rgba(242, 248, 248, 0.3);
+  --cardbackground: rgba(99, 100, 168, 0.3);
 }
 
 body {
@@ -11,6 +11,8 @@ body {
   background-image: url("../images/box-o-water_square.jpg");
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-color: var(--darkslategray);
 }
 
 /* Header and Subheader */
@@ -30,10 +32,6 @@ h1 {
 h1:hover {
   color: var(--lightslategray);
   background-color: var(--darkslategray);
-}
-
-nav {
-  align-items: right;
 }
 
 nav li {
@@ -77,24 +75,20 @@ a {
 
 /* About Me */
 .aboutmetitle { 
-  grid-area: about me;
   text-align: right;
 }
 
 .aboutme {
-  grid-area: aboutme; 
   padding-left: 10px;
 }
 
 /* Work and Work Cards */
 .worktitle {
-  grid-area: worktitle;
   text-align: right;
 }
 
-.work {
-  grid-area: work;
-}
+/* .work {
+} */
 
 h3 {
   padding: 20px 40px;
@@ -113,41 +107,31 @@ h3 {
 }
 
 .card-big {
-    border-style: solid;
-    border-width: 1px;
-    padding: 10px;
-    margin: 0px 0px 10px 0px;
-    float: left;
-    width: 97%;
-    align-items: left;
-    text-align: left;
-    flex-grow: 1;
-    background-color: var(--cardbackground);
+  padding: 10px;
+  margin: 0px 0px 10px 0px;
+  float: left;
+  width: 96%;
+  align-items: left;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: var(--cardbackground);
 }
 
-/* .card-big img {
-  position: relative;
-  top: 0px;
-  right: 0px;
-} */
-
-/* .prework {
-  position: relative;
-  top: 0px;
-  right: 0px;
-} */
+.card-big img {
+  margin: 10px;
+}
 
 .card-small {
-  border-style:solid;
-  border-width: 1px;
   padding: 10px;
   margin: 0px 10px 10px 0px;
   float: left;
-  width: 45%;
+  width: 47%;
   align-items: left;
   text-align: left;
   flex-grow: 1;
-  background-color: rgba(99, 100, 168, 0.5);
+  background-color: var(--cardbackground);
 }
 
 .row2 {
@@ -156,12 +140,10 @@ h3 {
 
 /* Contact Me */
 .contactmetitle {
-  grid-area: contactmetitle;
   text-align: right;
 }
 
 .contactme {
-  grid-area: contactme;
   align-items: right;
 }
 
@@ -195,7 +177,7 @@ h3 {
 @media screen and (max-width: 768px) {
 
   h1 {
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: none;
@@ -207,7 +189,7 @@ h3 {
   }
   
   .card-small {
-    width: 98%;
+    width: 96%;
   }
 
   .row4 {
@@ -229,6 +211,15 @@ h3 {
 
   h1 {
     padding: none;
+    margin: unset;
+  }
+
+  nav {
+    padding: 5px 0px;
+  }
+
+  ul {
+    margin: unset;
   }
 
   nav li {
@@ -245,7 +236,7 @@ h3 {
   }
 
   .contactme ul {
-    padding: 0px;
+    padding: 0px 0px 5px 0px;
   }
 
   .links li {
